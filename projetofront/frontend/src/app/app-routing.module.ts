@@ -8,9 +8,8 @@ const routes: Routes = [
     path:'',
     component: HomeComponent
   },
-
   {
-    path: 'pessoa',
+    path: 'pessoas',
     component: PessoaReadComponent
   }
 ];
