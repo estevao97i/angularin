@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { PessoaService } from './pessoa.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +22,7 @@ import { FooterComponent } from './views/components/template/footer/footer.compo
 import { NavComponent } from './views/components/template/nav/nav.component';
 import { HomeComponent } from './views/components/home/home.component';
 import { PessoaReadComponent } from './views/components/pessoa/pessoa-read/pessoa-read.component';
+import { PessoaService } from './service/pessoa.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { PessoaReadComponent } from './views/components/pessoa/pessoa-read/pesso
     FooterComponent,
     NavComponent,
     HomeComponent,
-    PessoaReadComponent,
+    PessoaReadComponent
   ],
   imports: [
     BrowserModule,
