@@ -1,0 +1,17 @@
+.header {
+    background-color:black;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 10%;
+}
+
+.letra {
+    color: cornsilk;
+}
+
+h3 {
+    border: px solid rgb(68,67,67);
+    padding: 1%;
+    border-radius: 3%;
+}
