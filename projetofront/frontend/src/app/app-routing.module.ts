@@ -1,7 +1,8 @@
 import { PessoaReadComponent } from './views/components/pessoa/pessoa-read/pessoa-read.component';
 import { HomeComponent } from './views/components/home/home.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PessoaCreateComponent } from './views/components/pessoa/pessoa-create/pessoa-create.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'pessoas',
     component: PessoaReadComponent
+  },
+  {
+    path: 'pessoas/create',
+    component: PessoaCreateComponent
   }
 ];
 

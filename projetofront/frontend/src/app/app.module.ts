@@ -23,6 +23,7 @@ import { NavComponent } from './views/components/template/nav/nav.component';
 import { HomeComponent } from './views/components/home/home.component';
 import { PessoaReadComponent } from './views/components/pessoa/pessoa-read/pessoa-read.component';
 import { PessoaService } from './service/pessoa.service';
+import { PessoaCreateComponent } from './views/components/pessoa/pessoa-create/pessoa-create.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PessoaService } from './service/pessoa.service';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    PessoaReadComponent
+    PessoaReadComponent,
+    PessoaCreateComponent
   ],
   imports: [
     BrowserModule,

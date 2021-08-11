@@ -1,5 +1,5 @@
 export interface Pessoa {
-    id: number;
+    id: null;
     nome: String;
     idade: number;
 }

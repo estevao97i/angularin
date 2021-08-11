@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Pessoa } from 'src/app/models/pessoa';
 import { PessoaService } from 'src/app/service/pessoa.service';
 
@@ -18,7 +19,8 @@ export class PessoaReadComponent implements AfterViewInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private service: PessoaService) { }
+  constructor(private service: PessoaService,
+    private router: Router) { }
 
 
   ngAfterViewInit() {
@@ -34,6 +36,10 @@ export class PessoaReadComponent implements AfterViewInit {
       this.dataSource.paginator = this.paginator;
     }
     )
+  }
+
+  navigateToCreate():void{
+    this.router.navigate(['pessoas/create'])
   }
 }
 
