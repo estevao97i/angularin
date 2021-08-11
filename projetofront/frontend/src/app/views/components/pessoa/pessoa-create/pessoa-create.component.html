@@ -5,11 +5,11 @@
 <form class="form">
     <mat-form-field class="full-width" appearance="fill">
       <mat-label>nome</mat-label>
-      <input matInput placeholder="Ex. flavin rei" value="">
+      <input [(ngModel)]="pessoa.nome" name="nome" matInput placeholder="Ex. flavin rei">
     </mat-form-field>
     <mat-form-field class="full-width" appearance="fill">
         <mat-label>idade</mat-label>
-        <input matInput placeholder="Ex. 105" value="">
+        <input [(ngModel)]="pessoa.idade" name="idade" matInput placeholder="Ex. 105">
     </mat-form-field>  
     
     <button (click)="cadastra()" class="cadastra" mat-stroked-button color="primary">Cadastrar</button>

@@ -12,8 +12,8 @@ export class PessoaCreateComponent implements OnInit {
 
   pessoa: Pessoa = {
     id: null,
-    nome : 'jeavio',
-    idade : 30
+    nome : '',
+    idade : ''
   }
 
   constructor(private router: Router,
