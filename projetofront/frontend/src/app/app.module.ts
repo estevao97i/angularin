@@ -24,6 +24,8 @@ import { HomeComponent } from './views/components/home/home.component';
 import { PessoaReadComponent } from './views/components/pessoa/pessoa-read/pessoa-read.component';
 import { PessoaService } from './service/pessoa.service';
 import { PessoaCreateComponent } from './views/components/pessoa/pessoa-create/pessoa-create.component';
+import { PessoaUpdateComponent } from './views/components/pessoa/pessoa-update/pessoa-update.component';
+import { PessoaDeleteComponent } from './views/components/pessoa/pessoa-delete/pessoa-delete.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { PessoaCreateComponent } from './views/components/pessoa/pessoa-create/p
     NavComponent,
     HomeComponent,
     PessoaReadComponent,
-    PessoaCreateComponent
+    PessoaCreateComponent,
+    PessoaUpdateComponent,
+    PessoaDeleteComponent
   ],
   imports: [
     BrowserModule,

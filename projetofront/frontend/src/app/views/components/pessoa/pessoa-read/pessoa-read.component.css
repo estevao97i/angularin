@@ -6,7 +6,7 @@
 
 .botaoInserirPessoa button{
     margin-left: 92%;
-    width: 5%;
+    width: 3%;
 }
 
 .botaoInserirPessoa h1{
@@ -27,4 +27,14 @@
 table {
     width: 100%;
 
+}
+
+#botaoEditar {
+    color: skyblue;
+    width: 20%;
+
+}
+
+#botaoDeletar {
+    color: tomato;
 }

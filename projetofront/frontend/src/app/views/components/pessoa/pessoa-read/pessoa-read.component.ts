@@ -14,7 +14,7 @@ export class PessoaReadComponent implements AfterViewInit {
 
   pessoa: Pessoa[] = [];
 
-  displayedColumns: string[] = ['id', 'nome', 'idade'];
+  displayedColumns: string[] = ['id', 'nome', 'idade', 'action'];
   dataSource = new MatTableDataSource<Pessoa>(this.pessoa);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

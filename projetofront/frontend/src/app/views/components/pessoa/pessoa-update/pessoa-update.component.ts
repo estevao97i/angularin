@@ -1,15 +1,17 @@
 import { Pessoa } from './../../../../models/pessoa';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PessoaService } from 'src/app/service/pessoa.service';
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-pessoa-create',
-  templateUrl: './pessoa-create.component.html',
-  styleUrls: ['./pessoa-create.component.css']
+  selector: 'app-pessoa-update',
+  templateUrl: './pessoa-update.component.html',
+  styleUrls: ['./pessoa-update.component.css']
 })
-export class PessoaCreateComponent implements OnInit {
+export class PessoaUpdateComponent implements OnInit {
+
+  id_pessoa = ''
 
   pessoa: Pessoa = {
     id: null,
@@ -21,19 +23,38 @@ export class PessoaCreateComponent implements OnInit {
   idade = new FormControl('', [Validators.minLength(1)])
 
   constructor(private router: Router,
-    private service: PessoaService) { }
+    private service: PessoaService,
+    private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.id_pessoa = this.route.snapshot.paramMap.get('id')!
+    this.findById();
+  }
+
+  atualiza():void{
+    this.service.update(this.pessoa).subscribe((resposta => {
+      this.router.navigate(['pessoas'])
+      this.service.message('Updeitou manin!')
+    }))
+  }
+
+  findById(): void{
+    this.service.findById(this.id_pessoa).subscribe((resposta) => {
+      this.pessoa = resposta;
+    })
   }
 
   cancel():void{
     this.router.navigate(['pessoas'])
   }
 
+
   cadastra():void{
-    this.service.create(this.pessoa).subscribe((resposta) => {
+    this.service.create(this.pessoa).subscribe(() => {
       this.router.navigate(['pessoas'])
       this.service.message('cadastrou mais um habitante de colatina')
+    }, err =>{
+
     })
   }
 
