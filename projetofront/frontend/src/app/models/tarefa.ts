@@ -1,5 +1,6 @@
 export interface Tarefa{
-    id: number;
+    id: any;
+    titulo: String;
     dataInicio: String;
     dataFim: String;
     dataEfetiva: String;

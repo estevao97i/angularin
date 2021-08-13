@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { PessoaCreateComponent } from './views/components/pessoa/pessoa-create/pessoa-create.component';
 import { PessoaUpdateComponent } from './views/components/pessoa/pessoa-update/pessoa-update.component';
 import { PessoaDeleteComponent } from './views/components/pessoa/pessoa-delete/pessoa-delete.component';
+import { TarefaReadComponent } from './views/components/tarefa/tarefa-read/tarefa-read.component';
+import { TarefaCreateComponent } from './views/components/tarefa/tarefa-create/tarefa-create.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,14 @@ const routes: Routes = [
   {
     path: 'pessoas/delete/:id',
     component: PessoaDeleteComponent
+  },
+  {
+    path: 'tarefas',
+    component: TarefaReadComponent
+  },
+  {
+    path: 'tarefas/create',
+    component: TarefaCreateComponent
   }
 ];
 

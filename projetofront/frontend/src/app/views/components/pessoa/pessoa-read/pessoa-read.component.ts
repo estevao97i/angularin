@@ -13,6 +13,7 @@ import { PessoaService } from 'src/app/service/pessoa.service';
 export class PessoaReadComponent implements AfterViewInit {
 
   pessoa: Pessoa[] = [];
+  
 
   displayedColumns: string[] = ['id', 'nome', 'idade', 'action'];
   dataSource = new MatTableDataSource<Pessoa>(this.pessoa);
@@ -25,10 +26,10 @@ export class PessoaReadComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     
-    this.findAll();
+    this.findAllPessoa();
   }
 
-  findAll(): void {
+  findAllPessoa(): void {
     this.service.findAll().subscribe((resposta) => {
       this.pessoa = resposta;
       console.log(resposta)
