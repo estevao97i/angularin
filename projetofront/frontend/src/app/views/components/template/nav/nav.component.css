@@ -1,0 +1,20 @@
+.container {
+    background-color: rgb(249, 254, 255);
+    height: 80%;
+
+}
+
+.sidenav {
+    background-color: rgb(235, 245, 246);
+}
+
+
+i{
+    margin-right: 1rem;
+
+}
+
+button {
+    margin: 1rem auto 1rem 1rem;
+}
+

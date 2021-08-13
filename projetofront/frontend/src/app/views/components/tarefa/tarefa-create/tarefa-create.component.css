@@ -1,0 +1,25 @@
+.titulo h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    text-align: center;
+    font-size: 3rem;
+    
+}
+
+.form {
+    margin:4rem  auto;
+    width: 30%;
+}
+
+.full-width{
+    width: 100%;
+}
+
+.cadastra{
+    margin-top: 2rem;
+    margin-left: 6rem;
+}
+
+.cancela{
+    margin-left: 12rem;
+}
