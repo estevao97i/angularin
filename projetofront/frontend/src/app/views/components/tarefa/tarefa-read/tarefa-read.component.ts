@@ -18,7 +18,7 @@ export class TarefaReadComponent implements AfterViewInit {
 
   tarefa: Tarefa[] = [];
 
-  displayedColumns: string[] = ['id', 'titulo', 'dataInicio', 'dataFim', 'dataEfetiva', 'status' , 'action'];
+  displayedColumns: string[] = ['pessoa','id', 'titulo', 'dataInicio', 'dataFim', 'dataEfetiva', 'status' , 'action'];
   dataSource = new MatTableDataSource<Tarefa>(this.tarefa)
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

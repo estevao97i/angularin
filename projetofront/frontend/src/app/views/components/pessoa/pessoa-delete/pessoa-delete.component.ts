@@ -36,7 +36,7 @@ export class PessoaDeleteComponent implements OnInit {
   deletar():void{
     this.service.delete(this.id_pessoa).subscribe(resposta => {
       this.router.navigate(['pessoas'])
-      this.service.message('habitante de colatina eliminado!')
+      this.service.message('liberdade cantou!')
     })
   }
   

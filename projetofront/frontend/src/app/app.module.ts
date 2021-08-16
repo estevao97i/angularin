@@ -28,6 +28,7 @@ import { PessoaUpdateComponent } from './views/components/pessoa/pessoa-update/p
 import { PessoaDeleteComponent } from './views/components/pessoa/pessoa-delete/pessoa-delete.component';
 import { TarefaReadComponent } from './views/components/tarefa/tarefa-read/tarefa-read.component';
 import { TarefaCreateComponent } from './views/components/tarefa/tarefa-create/tarefa-create.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { TarefaCreateComponent } from './views/components/tarefa/tarefa-create/t
     MatInputModule,
     MatDatepickerModule,
     MatPaginatorModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatNativeDateModule
   ],
   providers: [PessoaService],
   bootstrap: [AppComponent]

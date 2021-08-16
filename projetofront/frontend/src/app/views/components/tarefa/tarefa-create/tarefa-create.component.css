@@ -15,6 +15,16 @@
     width: 100%;
 }
 
+.left-width{
+    width: 45%;
+    margin-right: 5%;
+    }
+
+.right-width{
+    width: 45%;
+    margin-left: 5%;
+}
+
 .cadastra{
     margin-top: 2rem;
     margin-left: 6rem;
