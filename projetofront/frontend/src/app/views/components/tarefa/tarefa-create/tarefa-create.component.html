@@ -1,0 +1,64 @@
+<div class="titulo">
+    <h1>CADASTRO TAREFA (ɔ◔‿◔)ɔ ♥</h1>
+</div>
+
+<form class="form">
+
+    <div>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label> Titulo </mat-label>
+            <input [(ngModel)]="tarefa.titulo" [formControl]="titulo1" matInput placeholder="Ex. correr no parque">
+          </mat-form-field> 
+    </div>
+
+    <div fxLayout="row wrap">
+            <mat-form-field class="left-width">
+                <mat-label>Data de início</mat-label>
+                <input [(ngModel)]="tarefa.dataInicio" [formControl]="dataInicial"  matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+        
+                <mat-form-field class="right-width">
+                    <mat-label>Hora de início</mat-label>
+                    <input [(ngModel)]="horarioInicio" [formControl]="horarioInicial" matInput type="time" value="dataIni" #time>
+                </mat-form-field>    
+    </div>  
+        <div fxLayout="row wrap">
+            <mat-form-field class="left-width">
+                <mat-label>Data de finalização</mat-label>
+                <input [(ngModel)]="tarefa.dataFim" [formControl]="dataFinal" matInput [matDatepicker]="picker1">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1 ></mat-datepicker>
+              </mat-form-field>
+
+              <mat-form-field class="right-width">
+                <mat-label>Hora da finalização</mat-label>
+                <input [(ngModel)]="horarioFinal" [formControl]="horarioFinal" matInput type="time" #time>
+            </mat-form-field>  
+     </div> 
+     <div>
+         <mat-form-field appearance="fill" class="full-width">
+             <mat-label>Select </mat-label>
+             <mat-select [(ngModel)]="tarefa.status" [formControl]="status1">
+                 <mat-option value="one">A FAZER</mat-option>
+                 <mat-option value="two">FAZENDO</mat-option>
+                 <mat-option value="three">FEITO</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill" class="full-width">
+                <mat-label>Selecione uma Pessoa</mat-label>
+                <mat-select [(value)]="tarefa.idPessoa" [(ngModel)]="tarefa.id">
+                    <mat-option *ngFor="let res of pessoas" value="{{ res.id }}">{{ res.nome }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+           </div>
+
+    <div class="botoes">
+        <button id="botaoCadastrar" (click)="salvaTarefa()" class="cadastra mat-elevation-z8" mat-raised-button
+        color="primary">Cadastrar</button>
+        <button id="botaoCancelar" (click)="cancel()" class="cancela mat-elevation-z8" mat-stroked-button color="warn">Cancelar</button> 
+    </div>
+</form>
