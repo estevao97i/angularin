@@ -22,22 +22,22 @@ export class TarefaService {
   }
 
   findById(id: any):Observable<Tarefa>{
-    const url = this.baseUrl + "/Tarefas/" + id;
+    const url = this.baseUrl + "/tarefas/" + id;
     return this.http.get<Tarefa>(url);
   }
 
   delete(id: any):Observable<void>{
-    const url = this.baseUrl + "/Tarefas/" +id;
+    const url = this.baseUrl + "/tarefas/" +id;
     return this.http.delete<void>(url)
   }
 
   update(tarefa: Tarefa):Observable<Tarefa>{
-    const url = this.baseUrl + "/Tarefas";
+    const url = this.baseUrl + "/tarefas";
     return this.http.put<Tarefa>(url, tarefa);
   }
 
   create(tarefa: Tarefa):Observable<Tarefa>{
-    const url = this.baseUrl + "/Tarefas";
+    const url = this.baseUrl + "/tarefas";
     return this.http.post<Tarefa>(url, tarefa);
   }
 

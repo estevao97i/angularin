@@ -2,8 +2,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-style: italic;
     text-align: center;
-    font-size: 3rem;
-    
+    font-size: 3rem;  
 }
 
 .form {
@@ -25,11 +24,20 @@
     margin-left: 5%;
 }
 
-.cadastra{
-    margin-top: 2rem;
-    margin-left: 6rem;
+.botoes {
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+#botaoCancelar {
+    margin-left: 48%;
+}
+
+/* .cadastra{
+    margin-top: 10%;
+    margin-left: 25%;
 }
 
 .cancela{
-    margin-left: 12rem;
-}
+    margin-right: 25%;
+} */

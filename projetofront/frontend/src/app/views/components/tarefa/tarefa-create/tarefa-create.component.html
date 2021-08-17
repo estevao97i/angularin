@@ -2,64 +2,45 @@
     <h1>CADASTRO TAREFA (ɔ◔‿◔)ɔ ♥</h1>
 </div>
 
-<!-- <div>
-    <form class="form">
-        <h1>eae</h1>
-        <mat-form-field appearance="fill">
-            <mat-label>Choose a date</mat-label>
-            <input matInput [matDatepicker]="picker">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-    </form>
-</div> -->
-
-<!-- <mat-form-field appearance="fill">
-    <mat-label>Choose a date</mat-label>
-    <input matInput [matDatepicker]="picker">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field> --> 
-
 <form class="form">
 
     <div>
         <mat-form-field class="full-width" appearance="fill">
             <mat-label> Titulo </mat-label>
-            <input matInput placeholder="Ex. correr no parque">
+            <input [(ngModel)]="tarefa.titulo" [formControl]="titulo1" matInput placeholder="Ex. correr no parque">
           </mat-form-field> 
     </div>
 
     <div fxLayout="row wrap">
             <mat-form-field class="left-width">
                 <mat-label>Data de início</mat-label>
-                <input matInput [matDatepicker]="picker">
+                <input [(ngModel)]="tarefa.dataInicio" [formControl]="dataInicial"  matInput [matDatepicker]="picker">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
         
                 <mat-form-field class="right-width">
                     <mat-label>Hora de início</mat-label>
-                    <input matInput type="time" name="" id="" #time>
+                    <input [(ngModel)]="horarioInicio" [formControl]="horarioInicial" matInput type="time" value="dataIni" #time>
                 </mat-form-field>    
     </div>  
         <div fxLayout="row wrap">
             <mat-form-field class="left-width">
                 <mat-label>Data de finalização</mat-label>
-                <input matInput [matDatepicker]="picker">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
+                <input [(ngModel)]="tarefa.dataFim" [formControl]="dataFinal" matInput [matDatepicker]="picker1">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1 ></mat-datepicker>
               </mat-form-field>
 
               <mat-form-field class="right-width">
                 <mat-label>Hora da finalização</mat-label>
-                <input matInput type="time" name="" id="" #time>
+                <input [(ngModel)]="horarioFinal" [formControl]="horarioFinal" matInput type="time" #time>
             </mat-form-field>  
      </div> 
      <div>
          <mat-form-field appearance="fill" class="full-width">
              <mat-label>Select </mat-label>
-             <mat-select>
+             <mat-select [(ngModel)]="tarefa.status" [formControl]="status1">
                  <mat-option value="one">A FAZER</mat-option>
                  <mat-option value="two">FAZENDO</mat-option>
                  <mat-option value="three">FEITO</mat-option>
@@ -68,24 +49,16 @@
         </div>
         <div>
             <mat-form-field appearance="fill" class="full-width">
-                <mat-label>Select </mat-label>
-                <mat-select>
-                    <mat-option value="one">A FAZER</mat-option>
-                    <mat-option value="two">FAZENDO</mat-option>
-                    <mat-option value="three">FEITO</mat-option>
-                   </mat-select>
-               </mat-form-field>
+                <mat-label>Selecione uma Pessoa</mat-label>
+                <mat-select [(value)]="tarefa.idPessoa" [(ngModel)]="tarefa.id">
+                    <mat-option *ngFor="let res of pessoas" value="{{ res.id }}">{{ res.nome }}</mat-option>
+                </mat-select>
+            </mat-form-field>
            </div>
 
-     <!-- <mat-form-field class="full-width" appearance="fill">
-        <mat-label>idade</mat-label>
-        <input [(ngModel)]="pessoa.idade" name="idade" [formControl]="idade" required maxlength="2" matInput
-            placeholder="Ex. 99" type="number">  
-        <mat-error *ngIf="idade.invalid"> {{ errorValidIdade() }}</mat-error> 
-    </mat-form-field> -->
-
-    <button (click)="salvaTarefa()" class="cadastra mat-elevation-z8" mat-raised-button
+    <div class="botoes">
+        <button id="botaoCadastrar" (click)="salvaTarefa()" class="cadastra mat-elevation-z8" mat-raised-button
         color="primary">Cadastrar</button>
-    <button (click)="cancel()" class="cancela mat-elevation-z8" mat-stroked-button color="warn">Cancelar</button> 
-
+        <button id="botaoCancelar" (click)="cancel()" class="cancela mat-elevation-z8" mat-stroked-button color="warn">Cancelar</button> 
+    </div>
 </form>
