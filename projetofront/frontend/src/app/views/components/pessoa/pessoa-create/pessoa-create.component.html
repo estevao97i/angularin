@@ -1,0 +1,23 @@
+<div class="titulo">
+    <h1>CADASTRO PESSOA (͠◉_◉᷅ )</h1>
+</div>
+
+<form class="form">
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>nome</mat-label>
+        <input [(ngModel)]="pessoa.nome" name="nome" [formControl]="nome" required matInput maxlength="100"
+            placeholder="Ex. flavin rei">
+        <mat-error *ngIf="nome.invalid">{{ errorValidNome() }}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>idade</mat-label>
+        <input [(ngModel)]="pessoa.idade" name="idade" [formControl]="idade" required maxlength="2" matInput
+            placeholder="Ex. 99" type="number">
+        <mat-error *ngIf="idade.invalid"> {{ errorValidIdade() }}</mat-error>
+    </mat-form-field>
+
+    <button (click)="cadastra()" class="cadastra mat-elevation-z8" [disabled]="errorValidIdade() || errorValidNome()" mat-raised-button
+        color="primary">Cadastrar</button>
+    <button (click)="cancel()" class="cancela mat-elevation-z8" mat-stroked-button color="warn">Cancelar</button>
+
+</form>
