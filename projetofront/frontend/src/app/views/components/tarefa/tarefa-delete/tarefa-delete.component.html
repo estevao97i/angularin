@@ -1,0 +1,35 @@
+<div class="titulo">
+    <h1>DELETAR TAREFA ( ˘︹˘ )</h1>
+</div>
+
+<form class="form">
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>titulo</mat-label>
+        <input disabled [(ngModel)]="tarefa.titulo" name="nome" matInput maxlength="100"
+            placeholder="Ex. flavin rei">
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Data de Inicio</mat-label>
+        <input disabled [(ngModel)]="tarefa.dataInicio" name="dataInicio" matInput maxlength="100">
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Data de Finalização</mat-label>
+        <input disabled [(ngModel)]="tarefa.dataFim" name="dataFim" matInput maxlength="100">
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Data Efetiva</mat-label>
+        <input disabled [(ngModel)]="tarefa.dataEfetiva" name="dataEfetiva" matInput maxlength="100">
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Nome do Responsável</mat-label>
+        <input disabled [(ngModel)]="tarefa.nomePessoa" name="nomePessoa" matInput maxlength="100">
+    </mat-form-field>
+    <!-- <mat-form-field class="full-width" appearance="fill">
+        <mat-label>idade</mat-label>
+        <input disabled [(ngModel)]="pessoa.idade" name="idade" maxlength="2" matInput
+            placeholder="Ex. 99">
+    </mat-form-field> -->
+
+    <button id="botaoDeletar" (click)="deletarTarefa()" class="update mat-elevation-z8" mat-raised-button color="warn">Deletar</button>
+    <button id="botaoCancelar" (click)="cancel()" class="cancela mat-elevation-z8"  mat-stroked-button color="warn">Cancelar</button>
+</form>

@@ -36,7 +36,8 @@ export class TarefaReadComponent implements AfterViewInit {
     }
     
     navigateToCreate():void{
-      this.router.navigate(['tarefas/create'])
+      this.router.navigate(['tarefas/create']);
     }
+
 
 }

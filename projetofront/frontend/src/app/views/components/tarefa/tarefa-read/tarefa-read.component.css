@@ -31,10 +31,20 @@ table {
 
 #botaoEditar {
     color: rgb(141, 197, 250);
-    width: 30%;
+    width: 25%;
 
 }
 
 #botaoDeletar {
     color: rgb(255, 71, 71);
+}
+
+#botaoFinalizar {
+    color: lime;
+    margin-left: 15%;
+}
+
+#comment {
+    color: moccasin;
+    margin-left: 17%;
 }

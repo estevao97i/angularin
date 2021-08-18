@@ -7,50 +7,55 @@
     <div>
         <mat-form-field class="full-width" appearance="fill">
             <mat-label> Titulo </mat-label>
-            <input [(ngModel)]="tarefa.titulo" [formControl]="titulo1" matInput placeholder="Ex. correr no parque">
+            <input [(ngModel)]="tarefa.titulo" [formControl]="titulo1" required matInput placeholder="Ex. correr no parque">
+            <mat-error *ngIf="titulo1.invalid">{{ errorValidTitulo() }}</mat-error>
           </mat-form-field> 
     </div>
 
     <div fxLayout="row wrap">
             <mat-form-field class="left-width">
                 <mat-label>Data de início</mat-label>
-                <input [(ngModel)]="tarefa.dataInicio" [formControl]="dataInicial"  matInput [matDatepicker]="picker">
+                <input [(ngModel)]="tarefa.dataInicio" [formControl]="dataInicial" name="dataInicial" matInput required [matDatepicker]="picker" #date>
+                <mat-error *ngIf="dataInicial.invalid">{{ errorValidDataInicial() }}</mat-error>
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
               </mat-form-field>
         
                 <mat-form-field class="right-width">
                     <mat-label>Hora de início</mat-label>
-                    <input [(ngModel)]="horarioInicio" [formControl]="horarioInicial" matInput type="time" value="dataIni" #time>
+                    <input [(ngModel)]="horarioInicial" [formControl]="horarioInicial" name="horarioInicial" required matInput type="time" #time>
+                    <!-- <mat-error *ngIf="horarioInicial.invalid"> {{ errorValidHorarioInicial() }}</mat-error> -->
                 </mat-form-field>    
     </div>  
         <div fxLayout="row wrap">
             <mat-form-field class="left-width">
                 <mat-label>Data de finalização</mat-label>
-                <input [(ngModel)]="tarefa.dataFim" [formControl]="dataFinal" matInput [matDatepicker]="picker1">
+                <input [(ngModel)]="tarefa.dataFim" [formControl]="dataFinal" name="dataFinal" required matInput [matDatepicker]="picker1" #date>
+                <mat-error *ngIf="dataFinal.invalid">{{ errorValidDataFinal() }}</mat-error>
                 <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1 ></mat-datepicker>
               </mat-form-field>
 
               <mat-form-field class="right-width">
                 <mat-label>Hora da finalização</mat-label>
-                <input [(ngModel)]="horarioFinal" [formControl]="horarioFinal" matInput type="time" #time>
+                <input [(ngModel)]="horarioFinal" [formControl]="horarioFinal" name="horarioFinal" matInput required type="time" #time>
+                <mat-error *ngIf="horarioInicial.invalid"> {{ errorValidHorarioFinal() }}</mat-error> 
             </mat-form-field>  
      </div> 
      <div>
          <mat-form-field appearance="fill" class="full-width">
              <mat-label>Select </mat-label>
-             <mat-select [(ngModel)]="tarefa.status" [formControl]="status1">
-                 <mat-option value="one">A FAZER</mat-option>
-                 <mat-option value="two">FAZENDO</mat-option>
-                 <mat-option value="three">FEITO</mat-option>
+             <mat-select disableRipple [(value)]="tarefa.status" required>
+                 <mat-option value="A fazer">A FAZER</mat-option>
+                 <mat-option value="Fazendo">FAZENDO</mat-option>
+                 <mat-option value="Feito">FEITO</mat-option>
                 </mat-select>
             </mat-form-field>
         </div>
         <div>
             <mat-form-field appearance="fill" class="full-width">
                 <mat-label>Selecione uma Pessoa</mat-label>
-                <mat-select [(value)]="tarefa.idPessoa" [(ngModel)]="tarefa.id">
+                <mat-select [(value)]="tarefa.idPessoa" required>
                     <mat-option *ngFor="let res of pessoas" value="{{ res.id }}">{{ res.nome }}</mat-option>
                 </mat-select>
             </mat-form-field>

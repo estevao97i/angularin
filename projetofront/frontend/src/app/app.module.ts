@@ -29,6 +29,8 @@ import { PessoaDeleteComponent } from './views/components/pessoa/pessoa-delete/p
 import { TarefaReadComponent } from './views/components/tarefa/tarefa-read/tarefa-read.component';
 import { TarefaCreateComponent } from './views/components/tarefa/tarefa-create/tarefa-create.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { TarefaDeleteComponent } from './views/components/tarefa/tarefa-delete/tarefa-delete.component';
+import { TarefaUpdateComponent } from './views/components/tarefa/tarefa-update/tarefa-update.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     PessoaDeleteComponent,
     TarefaReadComponent,
     TarefaCreateComponent,
+    TarefaDeleteComponent,
+    TarefaUpdateComponent,
   ],
   imports: [
     BrowserModule,

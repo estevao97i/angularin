@@ -18,9 +18,9 @@ export class TarefaCreateComponent implements OnInit {
   pessoas: Pessoa[] = [];
 
   horarioInicio: String = '';
-  milesimoInicio: String = '';
+  minutoInicio: String = '';
   horarioFim: String = '';
-  milesimoFim: String = '';
+  minutoFim: String = '';
 
   tarefa: Tarefa = {
     id: null,
@@ -43,22 +43,20 @@ export class TarefaCreateComponent implements OnInit {
   }
 
   titulo1 = new FormControl('', [Validators.minLength(5)]);
-  dataInicial = new FormControl('', [Validators.minLength(8)]);
-  horarioInicial = new FormControl('', [Validators.minLength(5)]);
-  dataFinal = new FormControl('', [Validators.minLength(8)]);
-  horarioFinal = new FormControl('', [Validators.minLength(5)]);
-  dataEfetiva = new FormControl('', [Validators.minLength(8)]);
-  status1 = new FormControl('', [Validators.minLength(5)]);
+  dataInicial = new FormControl('', [Validators.minLength(2)]);
+  horarioInicial = new FormControl('', [Validators.minLength(2)]);
+  dataFinal = new FormControl('', [Validators.minLength(2)]);
+  horarioFinal = new FormControl('', [Validators.minLength(2)]);
+  dataEfetiva = new FormControl('', [Validators.minLength(2)]);
+  status1 = new FormControl('', [Validators.minLength(3)]);
 
 
   salvaTarefa():void{
     let svDataInicio: moment.Moment = moment.utc(this.tarefa.dataInicio).local();
-    // 2021-08-17T16:38:17.770+00:00
-    this.tarefa.dataInicio = svDataInicio.format('YYYY-MM-DD');
+    this.tarefa.dataInicio = svDataInicio.format('DD-MM-YYYY') + ' ' + this.horarioInicial;
 
     let svDataFim: moment.Moment = moment.utc(this.tarefa.dataFim).local();
-    this.tarefa.dataFim = svDataFim.format('YYYY-MM-DD');
-
+    this.tarefa.dataFim = svDataFim.format('DD-MM-YYYY') + ' ' + this.horarioFinal;
 
     this.tarefaservice.create(this.tarefa).subscribe((resposta => {
     console.log(resposta)
@@ -75,6 +73,41 @@ export class TarefaCreateComponent implements OnInit {
     this.pessoaservice.findAll().subscribe((res => {
       this.pessoas = res;
     }))
+  }
+
+  errorValidTitulo() {
+    if (this.titulo1.invalid) {
+      return 'O titulo deve ter entre 5 e 20 caracteres!';
+    }
+    return false;
+  }
+
+  errorValidDataInicial() {
+    if (this.dataInicial.invalid) {
+      return 'Data invalida';
+    }
+    return false;
+  }
+
+  errorValidHorarioInicial() {
+    if (this.horarioInicial.invalid) {
+      return 'Horario invalido';
+    }
+    return false;
+  }
+
+  errorValidDataFinal() {
+    if (this.dataFinal.invalid) {
+      return 'Data invalida';
+    }
+    return false;
+  }
+
+  errorValidHorarioFinal() {
+    if (this.horarioFinal.invalid) {
+      return 'Horario invalido';
+    }
+    return false;
   }
 
 }

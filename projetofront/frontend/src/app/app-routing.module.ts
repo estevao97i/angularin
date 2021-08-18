@@ -7,6 +7,8 @@ import { PessoaUpdateComponent } from './views/components/pessoa/pessoa-update/p
 import { PessoaDeleteComponent } from './views/components/pessoa/pessoa-delete/pessoa-delete.component';
 import { TarefaReadComponent } from './views/components/tarefa/tarefa-read/tarefa-read.component';
 import { TarefaCreateComponent } from './views/components/tarefa/tarefa-create/tarefa-create.component';
+import { TarefaDeleteComponent } from './views/components/tarefa/tarefa-delete/tarefa-delete.component';
+import { TarefaUpdateComponent } from './views/components/tarefa/tarefa-update/tarefa-update.component';
 
 const routes: Routes = [
   {
@@ -36,6 +38,14 @@ const routes: Routes = [
   {
     path: 'tarefas/create',
     component: TarefaCreateComponent
+  },
+  {
+    path: 'tarefas/delete/:id',
+    component: TarefaDeleteComponent
+  },
+  {
+    path: 'tarefas/update/:id',
+    component: TarefaUpdateComponent
   }
 ];
 
