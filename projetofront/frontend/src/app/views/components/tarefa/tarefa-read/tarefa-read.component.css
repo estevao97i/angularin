@@ -1,0 +1,50 @@
+.botaoInserirTarefa {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.botaoInserirTarefa button{
+    margin-left: 92%;
+    width: 3%;
+}
+
+.botaoInserirTarefa h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.container {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 4%;
+    margin-top: 3rem;
+  }
+
+table {
+    width: 100%;
+
+}
+
+#botaoEditar {
+    color: rgb(141, 197, 250);
+    width: 25%;
+
+}
+
+#botaoDeletar {
+    color: rgb(255, 71, 71);
+}
+
+#botaoFinalizar {
+    color: lime;
+    margin-left: 15%;
+}
+
+#comentario {
+    color: rgb(255, 232, 194);
+    margin-left: 17%;
+}
