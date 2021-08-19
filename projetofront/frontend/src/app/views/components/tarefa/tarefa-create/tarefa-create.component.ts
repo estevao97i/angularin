@@ -31,7 +31,7 @@ export class TarefaCreateComponent implements OnInit {
     status: '',
     idPessoa: '',
     nomePessoa: '',
-    comentario: ''
+    comentario: []
   }
 
   constructor(private router: Router,

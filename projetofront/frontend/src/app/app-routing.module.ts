@@ -9,6 +9,7 @@ import { TarefaReadComponent } from './views/components/tarefa/tarefa-read/taref
 import { TarefaCreateComponent } from './views/components/tarefa/tarefa-create/tarefa-create.component';
 import { TarefaDeleteComponent } from './views/components/tarefa/tarefa-delete/tarefa-delete.component';
 import { TarefaUpdateComponent } from './views/components/tarefa/tarefa-update/tarefa-update.component';
+import { ComentarioReadComponent } from './views/components/comentario/comentario-read/comentario-read.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'tarefas/update/:id',
     component: TarefaUpdateComponent
+  },
+  {
+    path: 'comentarios/:id',
+    component: ComentarioReadComponent
   }
 ];
 

@@ -1,5 +1,4 @@
 export interface Tarefa{
-
     id: any;
     titulo: String;
     dataInicio: any;

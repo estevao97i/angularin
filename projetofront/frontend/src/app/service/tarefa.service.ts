@@ -21,6 +21,12 @@ export class TarefaService {
     return this.http.get<Tarefa[]>(url);
   }
 
+  findComentario(id: any):Observable<Tarefa>{
+    const url = this.baseUrl + "/tarefas/" + id;
+    return this.http.get<Tarefa>(url);
+  }
+
+
   findById(id: any):Observable<Tarefa>{
     const url = this.baseUrl + "/tarefas/" + id;
     return this.http.get<Tarefa>(url);
