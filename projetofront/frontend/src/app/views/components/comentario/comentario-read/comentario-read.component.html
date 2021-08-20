@@ -6,3 +6,32 @@
             <th mat-header-cell *matHeaderCellDef>pessoa</th>
             <td mat-cell *matCellDef="let element"> {{element.nomePessoa}}</td>
         </ng-container> -->
+
+    <mat-card class="titulo">
+        <h2>COMENTARIOS</h2>
+    </mat-card>
+    
+    
+        <div class="mat-elevation-z8 container">
+        <table>
+
+            <p>
+
+                {{ tarefasLista }}
+
+            </p>
+        
+            <!-- <div *ngFor="let elemento of tarefasLista" >
+    
+            <p>
+                - {{ elemento }}
+            </p>
+        
+            </div> -->
+        </table>  
+        
+        <mat-paginator [pageSizeOptions]="[11,24]"
+                        showFirstLastButtons 
+                        aria-label="Select page of periodic elements">
+        </mat-paginator>
+        </div>        
