@@ -1,0 +1,13 @@
+<div class="botaoVoltar">
+    <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="primary">
+        <mat-icon>waving_hands</mat-icon>
+    </button>
+</div>
+<h1 class="comentarios">COMENTÁRIOS (͠≖ ͜ʖ͠≖)👌</h1>
+
+        <mat-card class="titulo mat-elevation-z8">
+
+        
+    <div *ngFor="let com of tarefasLista?.comentarios">
+        <mat-card class="mat-e">{{com.descricao}}</mat-card>
+    </div>
