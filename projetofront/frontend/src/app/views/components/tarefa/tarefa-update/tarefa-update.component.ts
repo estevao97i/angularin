@@ -23,7 +23,7 @@ export class TarefaUpdateComponent implements OnInit {
     status: '',
     idPessoa: '',
     nomePessoa: '',
-    comentario: []
+    comentarios: []
   }
 
   

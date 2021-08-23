@@ -22,7 +22,7 @@ export class TarefaDeleteComponent implements OnInit {
     status: '',
     idPessoa: '',
     nomePessoa: '',
-    comentario: ''
+    comentarios: []
   }
 
   constructor(private router: Router,

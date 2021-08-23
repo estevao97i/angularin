@@ -1,3 +1,5 @@
+import { Comentario } from "./comentario";
+
 export interface Tarefa{
     id: any;
     titulo: String;
@@ -7,5 +9,5 @@ export interface Tarefa{
     status: String;
     idPessoa: any;
     nomePessoa: String;
-    comentario: any;
+    comentarios: Comentario[];
 }

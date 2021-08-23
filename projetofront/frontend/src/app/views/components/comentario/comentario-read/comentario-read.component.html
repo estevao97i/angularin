@@ -1,37 +1,13 @@
-<!-- <div class="mat-elevation-z8 container">
-    <table mat-table [dataSource]="dataSource">
-         -->
-        <!-- Position Column -->
-        <!-- <ng-container matColumnDef="pessoa">
-            <th mat-header-cell *matHeaderCellDef>pessoa</th>
-            <td mat-cell *matCellDef="let element"> {{element.nomePessoa}}</td>
-        </ng-container> -->
+<div class="botaoVoltar">
+    <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="primary">
+        <mat-icon>waving_hands</mat-icon>
+    </button>
+</div>
+<h1 class="comentarios">COMENTÁRIOS (͠≖ ͜ʖ͠≖)👌</h1>
 
-    <mat-card class="titulo">
-        <h2>COMENTARIOS</h2>
-    </mat-card>
-    
-    
-        <div class="mat-elevation-z8 container">
-        <table>
+        <mat-card class="titulo mat-elevation-z8">
 
-            <p>
-
-                {{ tarefasLista }}
-
-            </p>
         
-            <!-- <div *ngFor="let elemento of tarefasLista" >
-    
-            <p>
-                - {{ elemento }}
-            </p>
-        
-            </div> -->
-        </table>  
-        
-        <mat-paginator [pageSizeOptions]="[11,24]"
-                        showFirstLastButtons 
-                        aria-label="Select page of periodic elements">
-        </mat-paginator>
-        </div>        
+    <div *ngFor="let com of tarefasLista?.comentarios">
+        <mat-card class="mat-e">{{com.descricao}}</mat-card>
+    </div>
